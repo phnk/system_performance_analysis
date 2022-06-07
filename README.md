@@ -7,9 +7,7 @@ The course is based on material from the course [CSE567M](https://www.cse.wustl.
 
 The course is divided into three different phases. Firstly, watch pre-recorded lectures. Secondly, a demonstration of selected performance analysis tool and/or proof on concept. This perferebly related to ones research. Lastly, a review and presentation of a selected research paper on the topic of performance analysis.
 
-The repo is structured as the following:
-`/notes` contains notes for each pre-recorder lecture
-`/seminar_notes` contains notes for the given seminars within the course
-`/project` contains all files for the project in the course.
-
-
+The repo is structured as the following:  
+`/notes` contains notes for each pre-recorder lecture.  
+`/seminar_notes` contains notes for the given seminars within the course.  
+`/project` contains all files for the project in the course.  
