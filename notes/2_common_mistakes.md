@@ -42,4 +42,3 @@ Now we can write down many metrics: Elapse time per call, meximum call rate per 
 ***Experimental design***: Full factorial experimental designs with 2^3 x 11.  
 ***Data analysis***: Analysis of variance for the first three factors. Regression for number nof sucessive calls.  
 ***Data presentation***: The final result will be plotted as a function of the block size n.
-
