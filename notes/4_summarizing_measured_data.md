@@ -60,4 +60,107 @@ Sample is whatever measurement we have done. Everytime we measure something, we 
 * Sample Mode: Plotting histogram and speciying the midpoint of the bucket where the histogram peaks. For categorical variables, the mode is the most common category.
 Mean and median always exists, mode might not exist.
 
-*** Cont at 31:30 ***
+To select mean, median, or mode use this flowchart (guideline not a rule):
+1. If the data it categorical? -> Use mode
+2. If total of interest? -> Use mean
+3. Is the distribution skewed? -> Use median
+4. Otherwise use mean
+
+Some examples:
+* Most used resource in a system: Resources are categorical -> Mode used
+* Interarrival time: Total time is of interest (we sum up all the arrival times) -> Mean is the proper choice
+* Load on a computer: Highly scewed distribution -> Median
+* Average Configuration (CPU, GPU, Memory of machines): Meadian due to skewness of the distribution
+
+Question: How do you know a distribution is skewed? Well, practice will make you be able to "see it" instantly...
+
+### Common misuses of means:
+* Using mean with significantly differnt values.
+* Mean poor choice if the distribution is skewed. You look if the samples in the distribution they should be close to the mean when calculating the mean. Mean is not always meaningful.
+* Multiplying the means -> E(x * y) =/= E(x)E(y). This is only true for indepdendent random varibles.
+* Taking a mean of a ratio with different bases
+
+### Geometric mean
+* Is defined as the product of n observations values raised to the power of 1/n 
+* Geometric mean is used if the product of the observations is of interest.
+* For example: calculate average cache hit/miss ratios in CPUs.
+
+### Different means
+* Arithmetic mean: (sum of observations) / (number of samples)
+* Geometric mean (of ratios): (product of observations) ^ (1 / (number of observations))
+* Harmonic mean: (number of observations) / (sum (1 / observation))
+* Weighted harmonic mean: Same as the above but multiply each observation with a set of weights (same of different)
+
+### Summary
+* Three things: mean, median and mode.
+* There are some guidelines for this.
+* We decided to use mean. There are different means.
+	- Arithmetic mean
+	- Geometric mean
+	- Harmonic mean
+	- Weighted arithmetic/geometric/harmonic mean
+* Geometric mean is not always the right answer for the ratio case.
+
+### Variability (dispertion)
+There are several way to measure varability. However the only two actually used is variance and percentiles
+
+#### Range
+* Range = Max - min.
+* Larger range means higher varability.
+* Range as a lone metric is not very useful.
+* Min often comes out as zero and the maximum is usually some outlier.
+* Unless our variable is bounded, increasing the number of observations leads to an increase of max and a decrease in max.
+* Range is only useful if the variable is bounded.
+
+#### Variance
+* s^2 = 1/(n-1) sum^n\_i=1 (x\_i - xbar)^2, where xbar = 1/n sum^n\_i=1 x\_i  
+* We are using s because sigma is over the entire population and here we are looking at variance for a sample or set.  
+* The divisior for s^2 is n-1 and not n as only n-1 observations are indepedent.  
+* Degrees of freedom: the number of independent terms in a sum.  
+* Variance is expressed in units which are square of the units of the observations. For example: if x\_i is in metre, then the unit of variance is metre^2. This is not very ideal for us as the variance will change depending on the unit of s. Better to use standard deviation.  
+* Coefficient of variance (COV) should be used as it takes the variability of the measurement out of the consideration.  
+
+#### Percentiles
+* Specifiying the 5-percentile and 95-percentile has the same impact as specifying min/max.
+* This can be done for any variable, does not have to be bounded.
+* Percentiles are defined in natrual numbers between 0 and 100. 
+	- We can also express them as fractions [0, 1]. Then they are called quantiles (fractile).
+	- 0.5 qunatile is the same as 50-percentile
+* Decitiles is the multiple of 10% such that the first decile is 10-percentile, second the 20-percentile and so forth.
+* Quartiles is the multiple of 25%.
+* alpha quatriles can be estimated by [(n-1)*alpha+1]. [.] means we round to nearest integer.
+	- To be precise, we use linear interpolation for continouous variables.
+
+#### Semi inter-quatile range
+Some metric never used.
+
+#### Mean absolute deviation
+* Good point: No need to square root or multiplication
+* Negative point: "I am not sure?????????????????"
+
+#### Comparision
+* Range is affected by outliers. Do not use.
+* Sample variance is also affected by outliers but the effect is lessened.
+* Mean absolute deviation is next in resistance to outliers
+* SIQR is very resistant to outliers.
+	- SIQR is preferred to standard deviation if the distribution is highly skewed
+
+#### Selecting the index of dispersion
+1. Is the distribution bounded? -> Use range
+2. If the distribution is unimodal symmetrical? -> use C.O.V
+3. Otherwise use percentiles or SIQR
+But also it is also very dependent on the problem. 
+
+### Determining distribution of data
+* ***The simplest way to determin the distribution is to plot a histogram***
+	- Count observations that fell into each cell or bucket
+	- The key problem is determining the cell size
+	- Small cells: large variation
+	- Large cells: small variation
+	- Cell size makes it possible to reach different conclusions about the distribution.
+	- Rule: if any cell has less than 5 observations, then the cell size should be increased.
+* Best way Raj has found to find the distribution of a set of data: ***Quantile-Quantile plot***
+	- You are trying to fit a distribution to the data.
+	- On one axis we plot the quantile observations and on the other the qunatiles of the distribution we "think" the data is. If the relationship is linear, its that distribution.
+
+
