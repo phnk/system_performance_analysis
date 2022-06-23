@@ -3,7 +3,7 @@ How do we select an evaluation techniques and how do we select our metrics?
 
 ## Criteria for selecting an evaluation technique
 Three techniques: Analytical modelling, Simulation and Measurement. These have all different ctiterion, such as we can only measure things postprototype. We also need to know how fast we need the results. Do we want the result in a few minutes, a few hours, or a few days?  
-Our criterions are Stage, Time required, Tools, Accuracy, Trade-off evaluation, Cost and Scaleability.
+Our criterions are Stage, Time required, Tools, Accuracy, Trade-off evaluation, Cost and Saleability.
 
 ## Three rules of validation
 1. Do not trust the result of a simulation model until they have been validated by analytical modelling or measurement.

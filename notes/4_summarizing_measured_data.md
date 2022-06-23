@@ -162,5 +162,3 @@ But also it is also very dependent on the problem.
 * Best way Raj has found to find the distribution of a set of data: ***Quantile-Quantile plot***
 	- You are trying to fit a distribution to the data.
 	- On one axis we plot the quantile observations and on the other the qunatiles of the distribution we "think" the data is. If the relationship is linear, its that distribution.
-
-
