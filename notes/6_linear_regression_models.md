@@ -31,4 +31,27 @@
 	- Regression parameters b\_0 and b\_1 are estimates from a single sample of size n, hence they are random.
 	- This means that there are true parameters of the population, beta\_0 and beta\_1. Thus b\_0 and b\_1 are just estimates.
 	- Hence,we can calculate the confidence interval for b\_0 and b\_1 just how we have done it before.
-
+* Confidence intervals for predictions
+	- Everything you get from the sample has a mean value, has a standard deviation and has a confidence interval.
+	- Everything you get from a sample will be random and will be different from a different sample.
+	- How good our prediction is decreases when we move away from the centre of our sample points
+* Regression assumptions
+	- Linear
+	- x is non random and is measured without any error
+	- Model errors are statistically independent
+	- The errors are normally distributed with zero mean a constant standard deviation
+* Visual tests for regression assumptions
+1. Linear relationship: Scatter plot y versus x and look. We cannot just "remove" outliers
+2. Independent errors: Scatter plot the error versus the predicted response and check if they "look" random. Plot the residuals as a function of the experiment number
+3. Normally distributed errors: Prepare a normal quantile-quantile plot of errors. If linear then the assumption is satisfied.
+4. Constant standard devitation of errors (homoscedasticity).
+* Summary
+	- Simple linear regression model
+	- Sums of squares
+	- Mean squares
+	- Degree of freedom
+	- Percent of variation explained
+	- Coefficient of determination
+	- Correlation coefficient
+	- Regression parameters as well as the predicted resposnes have confidence intervals
+	- Important to verify the regression assumptions. Done through visual tests.
