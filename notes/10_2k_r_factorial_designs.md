@@ -1,4 +1,4 @@
-# 2^k r Factorial Designs
+# [2^k r Factorial Designs](https://www.cse.wustl.edu/~jain/cse567-17/k_172kd.htm)
 * If you do the same experiment r times, what is the effect?
 * r replications of 2^k experiments > 2^k*r obervations -> Allows for estimation of experimental error (e)
 * Experimental error = Measured value - Estimated value. The error should sum to 0.
